@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Suman Kokade — Bridal Makeup Artist | Solapur</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@200;300;400;500&family=Great+Vibes&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --cream:#FDF8F3;--blush:#F2C4CE;--blush2:#E8A0B0;
+  --rose:#C8607A;--rose-d:#8B3A50;--gold:#C9A96E;
+  --gold-l:#E8D5A3;--gold-d:#8A6A30;--nude:#EDD5C0;
+  --nude2:#D4B09A;--dark:#1C0F14;--dark2:#2E1A22;
+  --muted:#8A7070;--white:#FFFFFF;--r:4px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;cursor:none;}
+.cursor{position:fixed;width:10px;height:10px;background:var(--rose);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s,opacity .2s;mix-blend-mode:multiply;}
+.cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--rose);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .25s ease;mix-blend-mode:multiply;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--cream);}
+::-webkit-scrollbar-thumb{background:var(--blush2);border-radius:3px;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 4rem;background:rgba(253,248,243,0.9);backdrop-filter:blur(18px);border-bottom:1px solid rgba(201,169,110,0.18);transition:padding .3s,box-shadow .3s;}
+nav.scrolled{padding:.8rem 4rem;box-shadow:0 4px 30px rgba(28,15,20,.07);}
+.nav-logo{text-align:center;}
+.nav-logo-script{font-family:'Great Vibes',cursive;font-size:1.9rem;color:var(--rose);line-height:1;}
+.nav-logo-sub{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);}
+.nav-links{display:flex;gap:2.2rem;list-style:none;}
+.nav-links a{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s;}
+.nav-links a:hover{color:var(--rose);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{padding:.55rem 1.6rem;background:transparent;color:var(--rose);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;border:1.5px solid var(--rose);border-radius:30px;text-decoration:none;transition:all .25s;font-family:'Jost',sans-serif;}
+.nav-cta:hover{background:var(--rose);color:white;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+.hamburger span{display:block;width:24px;height:1.5px;background:var(--dark);}
+
+/* HERO */
+#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:10rem 3.5rem 5rem 5rem;position:relative;z-index:2;}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-d);font-weight:500;margin-bottom:1.8rem;}
+.hero-eyebrow-line{width:35px;height:1px;background:var(--gold);}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,4.5vw,4.2rem);font-weight:300;line-height:1.12;color:var(--dark);margin-bottom:1rem;}
+.hero-title em{font-style:italic;color:var(--rose);}
+.hero-tagline{font-family:'Great Vibes',cursive;font-size:clamp(1.4rem,2.5vw,2rem);color:var(--gold);margin-bottom:1.8rem;}
+.hero-desc{font-size:.9rem;color:var(--muted);line-height:1.9;max-width:400px;margin-bottom:2.5rem;font-weight:300;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-fill{padding:.85rem 2.2rem;background:var(--rose);color:white;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;border:none;border-radius:30px;cursor:pointer;text-decoration:none;transition:all .3s;font-family:'Jost',sans-serif;font-weight:500;box-shadow:0 8px 25px rgba(200,96,122,.3);}
+.btn-fill:hover{background:var(--rose-d);transform:translateY(-2px);}
+.btn-ghost{padding:.85rem 2.2rem;background:transparent;color:var(--dark);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;border:1.5px solid var(--nude2);border-radius:30px;cursor:pointer;text-decoration:none;transition:all .3s;font-family:'Jost',sans-serif;}
+.btn-ghost:hover{border-color:var(--rose);color:var(--rose);}
+.hero-awards{display:flex;gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(201,169,110,.2);}
+.award-num{font-family:'Playfair Display',serif;font-size:2rem;font-weight:600;color:var(--rose);line-height:1;}
+.award-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+.hero-right{position:relative;overflow:hidden;}
+.hero-badge{position:absolute;bottom:2.5rem;left:-20px;z-index:5;background:white;padding:1.1rem 1.4rem;border-radius:var(--r);box-shadow:0 12px 40px rgba(28,15,20,.15);display:flex;align-items:center;gap:12px;animation:floatBadge 4s ease-in-out infinite;}
+@keyframes floatBadge{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.hero-badge-num{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:600;color:var(--rose);line-height:1;}
+.hero-badge-label{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);}
+.gold-ribbon{position:absolute;top:2rem;right:0;background:var(--gold);color:white;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;padding:.5rem 1.5rem .5rem 1rem;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,8% 50%);}
+.scroll-indicator{position:absolute;bottom:2rem;left:calc(25% - 30px);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--muted);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;}
+.scroll-arrow{width:1px;height:40px;background:linear-gradient(to bottom,transparent,var(--gold));animation:scrollPulse 2s ease-in-out infinite;}
+@keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* MARQUEE */
+.marquee-strip{background:var(--dark2);padding:1rem 0;overflow:hidden;}
+.marquee-inner{display:flex;gap:3rem;width:max-content;animation:marquee 20s linear infinite;}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{font-size:.65rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,248,243,.6);white-space:nowrap;display:flex;align-items:center;gap:1rem;}
+.marquee-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);display:inline-block;}
+
+/* SECTIONS */
+.section{padding:6.5rem 5rem;}
+.section-alt{background:var(--dark);color:var(--cream);}
+.section-blush{background:#FEF0F3;}
+.section-nude{background:#FBF4ED;}
+.sec-tag{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:.9rem;display:flex;align-items:center;gap:10px;}
+.sec-tag::before{content:'';display:inline-block;width:28px;height:1px;background:var(--gold);}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300;line-height:1.2;color:var(--dark);}
+.section-alt .sec-title{color:var(--cream);}
+.section-alt .sec-tag{color:var(--gold-l);}
+.sec-title em{font-style:italic;color:var(--rose);}
+.section-alt .sec-title em{color:var(--blush);}
+
+/* ABOUT */
+#about-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.about-img-wrap{position:relative;}
+.about-main-img{width:100%;aspect-ratio:3/4;border-radius:2px 80px 2px 80px;overflow:hidden;position:relative;}
+.about-main-img img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.about-float-card{position:absolute;right:-2rem;bottom:3rem;background:white;padding:1.25rem 1.5rem;border-radius:var(--r);box-shadow:0 16px 50px rgba(28,15,20,.12);min-width:150px;}
+.about-float-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:600;color:var(--rose);line-height:1;}
+.about-float-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:3px;}
+.about-exp-badge{position:absolute;top:-1.5rem;left:1.5rem;background:var(--gold);color:white;padding:1rem 1.25rem;border-radius:var(--r);text-align:center;box-shadow:0 8px 25px rgba(201,169,110,.4);}
+.about-exp-num{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;line-height:1;}
+.about-exp-label{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;}
+.about-text p{font-size:.9rem;color:var(--muted);line-height:1.9;margin-bottom:1.1rem;font-weight:300;}
+.about-text p strong{color:var(--dark);font-weight:500;}
+.skills-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.5rem;}
+.skill-pill{padding:.4rem 1.1rem;border:1px solid rgba(200,96,122,.25);border-radius:20px;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rose);font-weight:500;transition:all .25s;cursor:default;}
+.skill-pill:hover{background:var(--rose);color:white;border-color:var(--rose);}
+.signature{font-family:'Great Vibes',cursive;font-size:2.4rem;color:var(--rose);margin-top:1.8rem;line-height:1;}
+
+/* PORTFOLIO */
+.portfolio-tabs{display:flex;gap:.5rem;justify-content:center;margin-bottom:3rem;flex-wrap:wrap;}
+.ptab{padding:.55rem 1.5rem;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;background:transparent;border:1px solid var(--nude2);border-radius:20px;cursor:pointer;color:var(--muted);transition:all .25s;font-family:'Jost',sans-serif;}
+.ptab.active,.ptab:hover{background:var(--rose);color:white;border-color:var(--rose);}
+.portfolio-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.port-card{position:relative;overflow:hidden;cursor:pointer;border-radius:var(--r);aspect-ratio:3/4;}
+.port-card:nth-child(1){grid-column:span 2;grid-row:span 2;aspect-ratio:auto;}
+.port-card-inner{width:100%;height:100%;transition:transform .6s cubic-bezier(.25,.46,.45,.94);}
+.port-card:hover .port-card-inner{transform:scale(1.06);}
+.port-bg{width:100%;height:100%;background-size:cover;background-position:center;}
+.port-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,15,20,.85) 0%,transparent 60%);opacity:0;transition:opacity .4s;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:1.5rem;}
+.port-card:hover .port-overlay{opacity:1;}
+.port-name{font-family:'Playfair Display',serif;font-size:1rem;color:white;font-style:italic;margin-bottom:.25rem;}
+.port-event{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--blush);}
+.port-card::after{content:'';position:absolute;inset:0;border:0 solid rgba(201,169,110,0);border-radius:var(--r);transition:border .35s,box-shadow .35s;}
+.port-card:hover::after{border-width:2px;border-color:rgba(201,169,110,.6);box-shadow:inset 0 0 30px rgba(201,169,110,.08);}
+
+/* BEFORE/AFTER */
+.ba-section{margin-top:4rem;}
+.ba-title{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:400;text-align:center;margin-bottom:.5rem;}
+.ba-sub{text-align:center;font-size:.8rem;color:var(--muted);margin-bottom:2rem;}
+.ba-container{position:relative;width:100%;max-width:650px;margin:0 auto;aspect-ratio:4/3;overflow:hidden;border-radius:var(--r);cursor:col-resize;box-shadow:0 20px 60px rgba(28,15,20,.15);}
+.ba-after,.ba-before{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+.ba-after{background-size:cover;background-position:center;}
+.ba-before{background-size:cover;background-position:center;clip-path:polygon(0 0,50% 0,50% 100%,0 100%);transition:clip-path .01s;}
+.ba-handle{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:3px;background:white;cursor:col-resize;display:flex;align-items:center;justify-content:center;transition:left .01s;}
+.ba-handle-circle{width:44px;height:44px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(0,0,0,.25);font-size:.7rem;font-weight:500;color:var(--dark);}
+.ba-label{position:absolute;bottom:1rem;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;padding:.3rem .8rem;border-radius:20px;background:rgba(255,255,255,.9);color:var(--dark);pointer-events:none;}
+.ba-label.before{left:1rem;}.ba-label.after{right:1rem;}
+
+/* PACKAGES */
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.pkg-card{border:1px solid rgba(201,169,110,.2);border-radius:var(--r);padding:2.5rem 2rem;background:white;position:relative;transition:all .35s;overflow:hidden;}
+.pkg-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(to right,transparent,var(--gold),transparent);transform:scaleX(0);transition:transform .4s;}
+.pkg-card:hover::before{transform:scaleX(1);}
+.pkg-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(201,169,110,.15);}
+.pkg-card.featured{background:var(--dark2);color:var(--cream);border-color:var(--gold);box-shadow:0 20px 60px rgba(28,15,20,.2);}
+.pkg-featured-tag{position:absolute;top:1.2rem;right:1.2rem;background:var(--gold);color:white;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;padding:.3rem .8rem;border-radius:20px;}
+.pkg-tier{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:.75rem;}
+.pkg-name{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:400;color:var(--dark);margin-bottom:.5rem;}
+.pkg-card.featured .pkg-name{color:var(--cream);}
+.pkg-price{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:600;color:var(--rose);margin-bottom:1.5rem;line-height:1;}
+.pkg-price span{font-size:1rem;font-weight:300;color:var(--muted);}
+.pkg-divider{height:1px;background:rgba(201,169,110,.2);margin-bottom:1.5rem;}
+.pkg-features{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem;}
+.pkg-features li{font-size:.84rem;color:var(--muted);display:flex;align-items:flex-start;gap:.6rem;line-height:1.5;}
+.pkg-features li::before{content:'✦';color:var(--gold);font-size:.7rem;flex-shrink:0;margin-top:.15rem;}
+.pkg-card.featured .pkg-features li{color:rgba(253,248,243,.75);}
+.pkg-btn{display:block;width:100%;padding:.85rem;text-align:center;background:var(--rose);color:white;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;border:none;border-radius:30px;cursor:pointer;text-decoration:none;transition:all .3s;font-family:'Jost',sans-serif;box-shadow:0 6px 20px rgba(200,96,122,.25);}
+.pkg-btn:hover{background:var(--rose-d);transform:translateY(-2px);}
+.pkg-card.featured .pkg-btn{background:var(--gold);}
+.pkg-card.featured .pkg-btn:hover{background:var(--gold-d);}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.testi-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:2rem;transition:transform .3s;}
+.testi-card:hover{transform:translateY(-4px);}
+.quote-mark{font-family:'Playfair Display',serif;font-size:4rem;color:var(--gold);line-height:.5;margin-bottom:.5rem;opacity:.5;}
+.testi-text{font-family:'Playfair Display',serif;font-size:.95rem;font-style:italic;font-weight:300;color:rgba(253,248,243,.85);line-height:1.8;margin-bottom:1.5rem;}
+.testi-stars{color:var(--gold);font-size:.85rem;letter-spacing:3px;margin-bottom:1rem;}
+.testi-author{display:flex;align-items:center;gap:12px;}
+.testi-av{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:500;color:white;flex-shrink:0;}
+.testi-name{font-size:.84rem;font-weight:500;color:var(--cream);}
+.testi-occasion{font-size:.68rem;color:rgba(253,248,243,.5);margin-top:2px;}
+
+/* INSTAGRAM */
+.insta-header{text-align:center;margin-bottom:2.5rem;}
+.insta-handle{font-family:'Great Vibes',cursive;font-size:2rem;color:var(--rose);margin-top:.5rem;display:block;text-decoration:none;}
+.insta-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;}
+.insta-item{aspect-ratio:1;overflow:hidden;cursor:pointer;position:relative;transition:transform .3s;}
+.insta-item:hover{transform:scale(.97);}
+.insta-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s;display:block;}
+.insta-item:hover img{transform:scale(1.08);}
+.insta-item-overlay{position:absolute;inset:0;background:rgba(200,96,122,.5);opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center;color:white;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;}
+.insta-item:hover .insta-item-overlay{opacity:1;}
+/* Fallback gradient backgrounds for insta */
+.insta-item:nth-child(1){background:linear-gradient(135deg,#3d1525,#C87090);}
+.insta-item:nth-child(2){background:linear-gradient(135deg,#1a0a10,#8B3050);}
+.insta-item:nth-child(3){background:linear-gradient(135deg,#2d1808,#C09030);}
+.insta-item:nth-child(4){background:linear-gradient(135deg,#0a1810,#1D9060);}
+.insta-item:nth-child(5){background:linear-gradient(135deg,#1a1020,#7060A0);}
+.insta-item:nth-child(6){background:linear-gradient(135deg,#200808,#D05030);}
+.insta-item:nth-child(7){background:linear-gradient(135deg,#081820,#306080);}
+.insta-item:nth-child(8){background:linear-gradient(135deg,#200818,#A03060);}
+.insta-item:nth-child(9){background:linear-gradient(135deg,#081808,#308040);}
+.insta-item:nth-child(10){background:linear-gradient(135deg,#181008,#906020);}
+.insta-item:nth-child(11){background:linear-gradient(135deg,#180820,#603080);}
+.insta-item:nth-child(12){background:linear-gradient(135deg,#100808,#802020);}
+
+/* ══════════════════════════════════════════
+   BOOKING SECTION — Google Form Integrated
+══════════════════════════════════════════ */
+#booking-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start;}
+.booking-info h2{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:300;line-height:1.2;margin-bottom:.8rem;color:var(--dark);}
+.booking-info h2 em{font-style:italic;color:var(--rose);}
+.booking-info p{font-size:.88rem;color:var(--muted);line-height:1.9;margin-bottom:2rem;font-weight:300;}
+.contact-list{display:flex;flex-direction:column;gap:1.1rem;}
+.contact-row{display:flex;align-items:flex-start;gap:14px;}
+.contact-icon-wrap{width:42px;height:42px;border-radius:50%;background:#FDF0F3;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.contact-row-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:2px;}
+.contact-row-val{font-size:.88rem;color:var(--dark);font-weight:400;}
+.trust-badges{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2rem;}
+.trust-badge{font-size:.72rem;color:var(--muted);display:flex;align-items:center;gap:.3rem;}
+
+/* Google Form Wrapper */
+.gform-wrapper{
+  background:white;
+  border-radius:12px;
+  padding:2rem 2rem 0;
+  box-shadow:0 20px 60px rgba(28,15,20,.08);
+  border:1px solid rgba(201,169,110,.15);
+  overflow:hidden;
+  position:relative;
+}
+.gform-header{
+  margin-bottom:1.5rem;
+  padding-bottom:1.2rem;
+  border-bottom:1px solid rgba(201,169,110,.2);
+}
+.gform-header h3{
+  font-family:'Playfair Display',serif;
+  font-size:1.4rem;font-weight:400;color:var(--dark);margin-bottom:.3rem;
+}
+.gform-header p{font-size:.78rem;color:var(--muted);}
+.gform-frame{
+  width:100%;
+  border:none;
+  display:block;
+  /* Height auto-adjusts — Google Form fills content */
+  height:820px;
+  margin:0 -2rem;
+  width:calc(100% + 4rem);
+}
+.gform-note{
+  text-align:center;
+  font-size:.7rem;
+  color:var(--muted);
+  padding:.75rem 0 1.5rem;
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(253,248,243,.5);padding:3rem 5rem 2rem;}
+.footer-top{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:2rem;}
+.footer-brand-name{font-family:'Great Vibes',cursive;font-size:2.2rem;color:var(--cream);line-height:1;}
+.footer-brand-sub{font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(253,248,243,.4);margin-top:4px;}
+.footer-brand-desc{font-size:.8rem;line-height:1.8;margin-top:1rem;color:rgba(253,248,243,.5);font-weight:300;}
+.footer-col h4{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-l);font-weight:500;margin-bottom:1rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
+.footer-col ul a{font-size:.8rem;color:rgba(253,248,243,.5);text-decoration:none;transition:color .2s;}
+.footer-col ul a:hover{color:var(--blush);}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;font-size:.72rem;flex-wrap:wrap;gap:1rem;}
+.footer-social{display:flex;gap:1rem;}
+.social-btn{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:.9rem;text-decoration:none;transition:all .2s;color:rgba(253,248,243,.5);}
+.social-btn:hover{border-color:var(--rose);color:var(--blush);}
+
+/* WHATSAPP */
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:400;width:58px;height:58px;border-radius:50%;background:#25D366;color:white;display:flex;align-items:center;justify-content:center;font-size:1.7rem;box-shadow:0 6px 25px rgba(37,211,102,.45);text-decoration:none;transition:transform .25s,box-shadow .25s;animation:waPulse 3s ease-in-out infinite;}
+.wa-float:hover{transform:scale(1.12);}
+@keyframes waPulse{0%,100%{box-shadow:0 6px 25px rgba(37,211,102,.45)}50%{box-shadow:0 6px 40px rgba(37,211,102,.7)}}
+.wa-tooltip{position:absolute;right:68px;top:50%;transform:translateY(-50%);background:var(--dark);color:white;white-space:nowrap;font-size:.7rem;letter-spacing:.08em;padding:.4rem .9rem;border-radius:20px;pointer-events:none;opacity:0;transition:opacity .2s;}
+.wa-float:hover .wa-tooltip{opacity:1;}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;z-index:800;background:rgba(28,15,20,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s;backdrop-filter:blur(10px);}
+.lightbox.open{opacity:1;pointer-events:all;}
+.lightbox-inner{max-width:700px;width:90%;aspect-ratio:3/4;position:relative;border-radius:var(--r);overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.5);}
+.lightbox-close{position:fixed;top:2rem;right:2rem;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:white;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.lightbox-close:hover{background:rgba(255,255,255,.2);}
+
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .75s ease,transform .75s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero-left > *{animation:fadeInUp .8s both;}
+.hero-left > *:nth-child(1){animation-delay:.2s}
+.hero-left > *:nth-child(2){animation-delay:.4s}
+.hero-left > *:nth-child(3){animation-delay:.55s}
+.hero-left > *:nth-child(4){animation-delay:.7s}
+.hero-left > *:nth-child(5){animation-delay:.85s}
+.hero-left > *:nth-child(6){animation-delay:1s}
+
+/* MOBILE */
+@media(max-width:1024px){
+  nav{padding:1rem 2rem;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  #hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-left{padding:8rem 2rem 3rem;}
+  .hero-right{min-height:50vh;}
+  .section{padding:4.5rem 2rem;}
+  #about-inner,#booking-inner{grid-template-columns:1fr;gap:3rem;}
+  .portfolio-grid{grid-template-columns:repeat(2,1fr);}
+  .port-card:nth-child(1){grid-column:auto;grid-row:auto;aspect-ratio:3/4;}
+  .packages-grid{grid-template-columns:1fr;}
+  .testi-grid{grid-template-columns:1fr;}
+  .insta-grid{grid-template-columns:repeat(3,1fr);}
+  .footer-top{grid-template-columns:1fr 1fr;gap:2rem;}
+  .gform-frame{height:1000px;}
+}
+@media(max-width:600px){
+  nav{padding:1rem 1.25rem;}
+  .hero-left{padding:7rem 1.25rem 2.5rem;}
+  .section{padding:3.5rem 1.25rem;}
+  .portfolio-grid{grid-template-columns:1fr 1fr;gap:8px;}
+  .insta-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-top{grid-template-columns:1fr;}
+  .gform-frame{height:1100px;}
+  .gform-wrapper{padding:1.5rem 1.5rem 0;}
+  .gform-frame{margin:0 -1.5rem;width:calc(100% + 3rem);}
+}
+.mobile-nav{position:fixed;top:0;left:0;right:0;bottom:0;z-index:450;background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;transform:translateX(-100%);transition:transform .4s ease;}
+.mobile-nav.open{transform:translateX(0);}
+.mobile-nav a{font-family:'Playfair Display',serif;font-size:2rem;font-style:italic;color:var(--dark);text-decoration:none;transition:color .2s;}
+.mobile-nav a:hover{color:var(--rose);}
+.mobile-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--dark);}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curRing"></div>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="toggleMobileNav()">✕</button>
+  <a href="#hero" onclick="toggleMobileNav()">Home</a>
+  <a href="#about" onclick="toggleMobileNav()">About</a>
+  <a href="#portfolio" onclick="toggleMobileNav()">Portfolio</a>
+  <a href="#services" onclick="toggleMobileNav()">Services</a>
+  <a href="#reviews" onclick="toggleMobileNav()">Reviews</a>
+  <a href="#booking" onclick="toggleMobileNav()">Book Now</a>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div style="width:80px;"></div>
+  <div class="nav-logo">
+    <div class="nav-logo-script">Suman Kokade</div>
+    <div class="nav-logo-sub">Bridal Makeup Artist</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#booking">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="#booking">Book Now</a>
+  <button class="hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow"><span class="hero-eyebrow-line"></span>Solapur's Most Sought-After Bridal Artist</div>
+    <h1 class="hero-title">Where <em>Beauty</em><br>Becomes<br>Art</h1>
+    <div class="hero-tagline">"Enhancing Beauty, Creating Confidence"</div>
+    <p class="hero-desc">Specialising in bridal transformations that honour tradition while embracing modern elegance. Every look is crafted with precision, passion, and an artist's eye for your most radiant self.</p>
+    <div class="hero-btns">
+      <a class="btn-fill" href="#booking">Book Your Look</a>
+      <a class="btn-ghost" href="#portfolio">View Portfolio</a>
+    </div>
+    <div class="hero-awards">
+      <div class="award-item"><div class="award-num">350+</div><div class="award-label">Brides Styled</div></div>
+      <div class="award-item"><div class="award-num">10 Yrs</div><div class="award-label">Experience</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div style="width:100%;height:100%;min-height:100vh;background:url('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride.jpeg') center top/cover no-repeat;position:relative;">
+      <div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(45,16,32,0.35),transparent 60%);"></div>
+      <div class="gold-ribbon">★ Best Bridal Artist 2024</div>
+    </div>
+    <div class="hero-badge">
+      <div class="hero-badge-icon">👑</div>
+      <div><div class="hero-badge-num">★ 4.9</div><div class="hero-badge-label">Rated on Google</div></div>
+    </div>
+  </div>
+  <div class="scroll-indicator"><div class="scroll-arrow"></div><span>Scroll</span></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span class="marquee-item"><span class="marquee-dot"></span>Bridal Makeup</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Airbrush Technique</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>HD Makeup</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Reception Looks</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Mehendi Looks</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Engagement Glam</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Hair Styling</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Saree Draping</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Pre-Bridal Care</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Bridal Makeup</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Airbrush Technique</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>HD Makeup</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Reception Looks</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Mehendi Looks</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Engagement Glam</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Hair Styling</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Saree Draping</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Pre-Bridal Care</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section section-nude" id="about">
+  <div id="about-inner">
+    <div class="about-img-wrap fade-up">
+      <div class="about-main-img">
+        <img src="https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride1.jpeg" alt="Suman Kokade - Makeup Artist" />
+      </div>
+      <div class="about-float-card">
+        <div class="about-float-num">350+</div>
+        <div class="about-float-label">Brides Made Beautiful</div>
+      </div>
+      <div class="about-exp-badge">
+        <div class="about-exp-num">10</div>
+        <div class="about-exp-label">Years of Artistry</div>
+      </div>
+    </div>
+    <div class="about-text fade-up">
+      <div class="sec-tag">The Artist Behind the Magic</div>
+      <h2 class="sec-title">A story born from <em>passion</em></h2>
+      <br>
+      <p>I'm <strong>Suman Kokade</strong> — a certified luxury makeup artist with over 10 years of experience transforming brides across Solapur, Pune, Mumbai, and beyond. My journey began with a simple childhood wonder: how a brush and a little colour could make someone feel completely, breathtakingly <em>themselves</em>.</p>
+      <p>Trained at the prestigious VLCC and internationally certified in airbrush and HD techniques, I've had the privilege of being part of over 350 bridal stories — each one unique, each one sacred. I believe every bride carries her own kind of beauty; my art is simply to illuminate it.</p>
+      <p>I use only <strong>premium, skin-safe products</strong> from MAC, Charlotte Tilbury, and NARS. Because on your most important day, your skin deserves nothing but the finest.</p>
+      <div class="skills-wrap">
+        <span class="skill-pill">Bridal Makeup</span>
+        <span class="skill-pill">Airbrush HD</span>
+        <span class="skill-pill">Smokey Eyes</span>
+        <span class="skill-pill">Traditional Looks</span>
+        <span class="skill-pill">Hair Styling</span>
+        <span class="skill-pill">Saree Draping</span>
+        <span class="skill-pill">Skin Prep</span>
+        <span class="skill-pill">Editorial</span>
+      </div>
+      <div class="signature">Suman Kokade</div>
+      <a class="btn-fill" href="#booking" style="display:inline-block;margin-top:1.5rem;">Book a Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section section-blush" id="portfolio">
+  <div style="text-align:center;margin-bottom:1rem;" class="fade-up">
+    <div class="sec-tag" style="justify-content:center;">Bridal Portfolio</div>
+    <h2 class="sec-title">Every bride, a <em>masterpiece</em></h2>
+    <p style="font-size:.88rem;color:var(--muted);margin-top:.8rem;max-width:500px;margin-left:auto;margin-right:auto;font-weight:300;">Real brides. Real transformations. Hover to see their stories — click to view full size.</p>
+  </div>
+  <div class="portfolio-tabs fade-up">
+    <button class="ptab active" onclick="filterPort('all',this)">All Looks</button>
+    <button class="ptab" onclick="filterPort('traditional',this)">Traditional Bridal</button>
+    <button class="ptab" onclick="filterPort('modern',this)">Modern Bridal</button>
+    <button class="ptab" onclick="filterPort('reception',this)">Reception</button>
+  </div>
+  <div class="portfolio-grid fade-up" id="portGrid">
+    <div class="port-card" data-cat="traditional" onclick="openLightbox('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride2.jpeg','Amruta Masal','Engagement Look')">
+      <div class="port-card-inner"><div class="port-bg" style="background-image:url('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride2.jpeg');background-size:cover;background-position:center;"></div></div>
+      <div class="port-overlay"><div class="port-name">Amruta Masal</div><div class="port-event">Engagement Look</div></div>
+    </div>
+    <div class="port-card" data-cat="modern" onclick="openLightbox('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride3.jpeg','Tanaya Pawar','Saptpadi Look')">
+      <div class="port-card-inner"><div class="port-bg" style="background-image:url('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride3.jpeg');background-size:cover;background-position:center;"></div></div>
+      <div class="port-overlay"><div class="port-name">Tanaya Pawar</div><div class="port-event">Saptpadi Look</div></div>
+    </div>
+    <div class="port-card" data-cat="reception" onclick="openLightbox('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride4.jpeg','Ankita Pawar','Maternity Look')">
+      <div class="port-card-inner"><div class="port-bg" style="background-image:url('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride4.jpeg');background-size:cover;background-position:center;"></div></div>
+      <div class="port-overlay"><div class="port-name">Ankita Pawar</div><div class="port-event">Maternity Look</div></div>
+    </div>
+    <div class="port-card" data-cat="traditional" onclick="openLightbox('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride5.jpeg','Pooja Nair','South Indian Bride')">
+      <div class="port-card-inner"><div class="port-bg" style="background-image:url('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride5.jpeg');background-size:cover;background-position:center;"></div></div>
+      <div class="port-overlay"><div class="port-name">Pooja Nair</div><div class="port-event">South Indian Bride</div></div>
+    </div>
+    <div class="port-card" data-cat="modern" onclick="openLightbox('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride6.jpeg','Kavya Shah','Destination Wedding')">
+      <div class="port-card-inner"><div class="port-bg" style="background-image:url('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride6.jpeg');background-size:cover;background-position:center;"></div></div>
+      <div class="port-overlay"><div class="port-name">Kavya Shah</div><div class="port-event">Destination Wedding</div></div>
+    </div>
+    <div class="port-card" data-cat="reception" onclick="openLightbox('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride7.jpeg','Meera Joshi','Mehendi Ceremony')">
+      <div class="port-card-inner"><div class="port-bg" style="background-image:url('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride7.jpeg');background-size:cover;background-position:center;"></div></div>
+      <div class="port-overlay"><div class="port-name">Meera Joshi</div><div class="port-event">Mehendi Ceremony</div></div>
+    </div>
+    <div class="port-card" data-cat="traditional" onclick="openLightbox('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride8.jpeg','Divya Reddy','Marathi Bride')">
+      <div class="port-card-inner"><div class="port-bg" style="background-image:url('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride8.jpeg');background-size:cover;background-position:center;"></div></div>
+      <div class="port-overlay"><div class="port-name">Divya Reddy</div><div class="port-event">Marathi Traditional Bride</div></div>
+    </div>
+    <div class="port-card" data-cat="modern" onclick="openLightbox('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride9.jpeg','Aisha Khan','Editorial Bridal')">
+      <div class="port-card-inner"><div class="port-bg" style="background-image:url('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride9.jpeg');background-size:cover;background-position:center;"></div></div>
+      <div class="port-overlay"><div class="port-name">Aisha Khan</div><div class="port-event">Editorial Bridal Shoot</div></div>
+    </div>
+  </div>
+  <!-- Before/After -->
+  <div class="ba-section fade-up">
+    <h3 class="ba-title">Before & After</h3>
+    <p class="ba-sub">Drag the slider to reveal the transformation</p>
+    <div class="ba-container" id="baContainer">
+      <div class="ba-after" style="background-image:url('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride2.jpeg');background-size:cover;background-position:center;">
+        <span class="ba-label after">After Makeup</span>
+      </div>
+      <div class="ba-before" id="baBefore" style="background-image:url('https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride2.jpeg');background-size:cover;background-position:center;filter:grayscale(100%) brightness(0.7);">
+        <span class="ba-label before">Before Makeup</span>
+      </div>
+      <div class="ba-handle" id="baHandle"><div class="ba-handle-circle">◀ ▶</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div style="text-align:center;max-width:600px;margin:0 auto 1rem;" class="fade-up">
+    <div class="sec-tag" style="justify-content:center;">Services & Packages</div>
+    <h2 class="sec-title">Choose your <em>perfect package</em></h2>
+    <p style="font-size:.88rem;color:var(--muted);margin-top:.8rem;font-weight:300;">All packages include a complimentary skin consultation and are fully customisable to your vision.</p>
+  </div>
+  <div class="packages-grid">
+    <div class="pkg-card fade-up">
+      <div class="pkg-tier">Starter Package</div>
+      <div class="pkg-name">Essential Bride</div>
+      <div class="pkg-price">₹8,000 <span>/ bridal day</span></div>
+      <div class="pkg-divider"></div>
+      <ul class="pkg-features">
+        <li>Full Bridal Makeup (Traditional or Modern)</li>
+        <li>Basic Hair Styling (Bun or Open)</li>
+        <li>One Pre-Bridal Skin Session</li>
+        <li>Touch-Up Kit Provided</li>
+        <li>Makeup Trial Included</li>
+        <li>Premium MAC & NYX Products</li>
+      </ul>
+      <a href="#booking" class="pkg-btn">Book Essential</a>
+    </div>
+    <div class="pkg-card featured fade-up">
+      <div class="pkg-featured-tag">Most Popular ★</div>
+      <div class="pkg-tier">Signature Package</div>
+      <div class="pkg-name">Luxury Bride</div>
+      <div class="pkg-price" style="color:var(--gold-l);">₹18,000 <span style="color:rgba(253,248,243,.4);">/ bridal day</span></div>
+      <div class="pkg-divider"></div>
+      <ul class="pkg-features">
+        <li>HD Airbrush Bridal Makeup</li>
+        <li>Elaborate Hair Styling + Extensions</li>
+        <li>Saree / Lehenga Draping</li>
+        <li>Two Pre-Bridal Glow Sessions</li>
+        <li>Full Day Artist On-Call (8 hrs)</li>
+        <li>Premium Charlotte Tilbury Products</li>
+        <li>Bridal Party — 2 Complementary Looks</li>
+        <li>Professional Touch-Up Kit Gift</li>
+      </ul>
+      <a href="#booking" class="pkg-btn">Book Luxury</a>
+    </div>
+    <div class="pkg-card fade-up">
+      <div class="pkg-tier">Elite Package</div>
+      <div class="pkg-name">Royal Bride</div>
+      <div class="pkg-price">₹35,000 <span>/ full wedding</span></div>
+      <div class="pkg-divider"></div>
+      <ul class="pkg-features">
+        <li>All Wedding Functions (Mehendi → Reception)</li>
+        <li>Cinematic HD Airbrush Makeup</li>
+        <li>Celebrity-Level Hair & Styling</li>
+        <li>Saree + Lehenga + Jewellery Styling</li>
+        <li>Full Pre-Bridal Package (4 Sessions)</li>
+        <li>Bridal Party — 5 Complete Looks</li>
+        <li>Dedicated Artist Team (2 Artists)</li>
+        <li>Personalised Makeup Look Book</li>
+      </ul>
+      <a href="#booking" class="pkg-btn">Book Royal</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-alt" id="reviews">
+  <div style="text-align:center;margin-bottom:1rem;" class="fade-up">
+    <div class="sec-tag" style="justify-content:center;color:var(--gold-l);">Bride Stories</div>
+    <h2 class="sec-title">Words from our <em>beautiful brides</em></h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card fade-up">
+      <div class="quote-mark">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">I felt like an absolute queen on my wedding day. Suman understood exactly what I wanted — the look was timeless, flawless, and lasted through tears of joy and dance all night!</p>
+      <div class="testi-author">
+        <div class="testi-av" style="background:var(--rose);">AN</div>
+        <div><div class="testi-name">Ananya Nair</div><div class="testi-occasion">Hindu Wedding Bride — Feb 2025</div></div>
+      </div>
+    </div>
+    <div class="testi-card fade-up">
+      <div class="quote-mark">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">The best decision I made for my wedding was booking Suman. She did makeup for me and 4 bridesmaids — every single one of us looked stunning. Highly, highly recommended!</p>
+      <div class="testi-author">
+        <div class="testi-av" style="background:#906030;">SD</div>
+        <div><div class="testi-name">Sneha Deshmukh</div><div class="testi-occasion">Destination Wedding — Jan 2025</div></div>
+      </div>
+    </div>
+    <div class="testi-card fade-up">
+      <div class="quote-mark">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">I have very sensitive skin and was worried, but Suman used products that didn't cause any reaction. My skin looked dewy and radiant — even better in photos. She is truly an artist.</p>
+      <div class="testi-author">
+        <div class="testi-av" style="background:#1D9E75;">PK</div>
+        <div><div class="testi-name">Pooja Kulkarni</div><div class="testi-occasion">Marathi Bride — Dec 2024</div></div>
+      </div>
+    </div>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:center;gap:3rem;margin-top:3rem;padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap;" class="fade-up">
+    <div style="text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:600;color:var(--gold-l);line-height:1;">350+</div><div style="font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(253,248,243,.4);margin-top:.5rem;">Brides Styled</div></div>
+    <div style="width:1px;height:70px;background:rgba(255,255,255,.1);"></div>
+    <div style="text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:600;color:var(--gold-l);line-height:1;">10+</div><div style="font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(253,248,243,.4);margin-top:.5rem;">Years Experience</div></div>
+    <div style="width:1px;height:70px;background:rgba(255,255,255,.1);"></div>
+    <div style="text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:3.5rem;font-weight:600;color:var(--gold-l);line-height:1;">98%</div><div style="font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(253,248,243,.4);margin-top:.5rem;">Repeat Clients</div></div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="section section-nude" id="instagram">
+  <div class="insta-header fade-up">
+    <div class="sec-tag" style="justify-content:center;">Follow Our Work</div>
+    <h2 class="sec-title" style="text-align:center;">Daily <em>beauty moments</em></h2>
+    <a class="insta-handle" href="https://www.instagram.com/sumankokade6" target="_blank">@sumankokade6</a>
+    <p style="font-size:.8rem;color:var(--muted);margin-top:.5rem;font-weight:300;">Follow for daily inspiration, bridal looks & behind-the-scenes</p>
+  </div>
+  <div class="insta-grid fade-up">
+    <div class="insta-item"><img src="https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride2.jpeg" alt="Post 1" onerror="this.style.display='none'"/><div class="insta-item-overlay">View</div></div>
+    <div class="insta-item"><img src="https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride3.jpeg" alt="Post 2" onerror="this.style.display='none'"/><div class="insta-item-overlay">View</div></div>
+    <div class="insta-item"><img src="https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride4.jpeg" alt="Post 3" onerror="this.style.display='none'"/><div class="insta-item-overlay">View</div></div>
+    <div class="insta-item"><img src="https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride5.jpeg" alt="Post 4" onerror="this.style.display='none'"/><div class="insta-item-overlay">View</div></div>
+    <div class="insta-item"><img src="https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride6.jpeg" alt="Post 5" onerror="this.style.display='none'"/><div class="insta-item-overlay">View</div></div>
+    <div class="insta-item"><img src="https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride7.jpeg" alt="Post 6" onerror="this.style.display='none'"/><div class="insta-item-overlay">View</div></div>
+    <div class="insta-item"><img src="https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride8.jpeg" alt="Post 7" onerror="this.style.display='none'"/><div class="insta-item-overlay">View</div></div>
+    <div class="insta-item"><img src="https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride9.jpeg" alt="Post 8" onerror="this.style.display='none'"/><div class="insta-item-overlay">View</div></div>
+    <div class="insta-item"><img src="https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride.jpeg" alt="Post 9" onerror="this.style.display='none'"/><div class="insta-item-overlay">View</div></div>
+    <div class="insta-item"><img src="https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride1.jpeg" alt="Post 10" onerror="this.style.display='none'"/><div class="insta-item-overlay">View</div></div>
+    <div class="insta-item"><img src="https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride2.jpeg" alt="Post 11" onerror="this.style.display='none'"/><div class="insta-item-overlay">View</div></div>
+    <div class="insta-item"><img src="https://raw.githubusercontent.com/SamruddhiK-1508/potfolio_photos/main/Bride3.jpeg" alt="Post 12" onerror="this.style.display='none'"/><div class="insta-item-overlay">View</div></div>
+  </div>
+  <div style="text-align:center;margin-top:2rem;" class="fade-up">
+    <a href="https://www.instagram.com/sumankokade6" target="_blank" class="btn-ghost" style="display:inline-block;">Follow on Instagram →</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     BOOKING — Google Form Embedded
+══════════════════════════════════════════ -->
+<section class="section section-blush" id="booking">
+  <div id="booking-inner">
+
+    <!-- LEFT: Contact Info -->
+    <div class="booking-info fade-up">
+      <div class="sec-tag">Book Your Appointment</div>
+      <h2>Let's create your <em>perfect look</em></h2>
+      <br>
+      <p>Fill the form and I'll get back within 24 hours. For urgent bookings, WhatsApp me directly!</p>
+      <div class="contact-list">
+        <div class="contact-row">
+          <div class="contact-icon-wrap">📍</div>
+          <div>
+            <div class="contact-row-label">Studio Location</div>
+            <div class="contact-row-val">Bhavani Peth, Solapur, Maharashtra 413002</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon-wrap">📞</div>
+          <div>
+            <div class="contact-row-label">Phone & WhatsApp</div>
+            <div class="contact-row-val">+91 93093 99932</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon-wrap">📧</div>
+          <div>
+            <div class="contact-row-label">Email</div>
+            <div class="contact-row-val">samruddhikokade143@gmail.com</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon-wrap">📸</div>
+          <div>
+            <div class="contact-row-label">Instagram</div>
+            <div class="contact-row-val">@sumankokade6</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon-wrap">🕐</div>
+          <div>
+            <div class="contact-row-label">Studio Hours</div>
+            <div class="contact-row-val">Mon–Sat 9am–8pm &nbsp;|&nbsp; Sun 10am–6pm</div>
+          </div>
+        </div>
+      </div>
+      <div class="trust-badges">
+        <span class="trust-badge">✅ Verified Artist</span>
+        <span class="trust-badge">✅ Skin-Safe Products</span>
+        <span class="trust-badge">✅ Outstation Available</span>
+        <span class="trust-badge">✅ 350+ Happy Brides</span>
+      </div>
+
+      <!-- Direct WhatsApp CTA -->
+      <a href="https://wa.me/919309399932?text=Hi%20Suman!%20I%20would%20like%20to%20book%20a%20makeup%20appointment."
+         target="_blank"
+         style="display:inline-flex;align-items:center;gap:.6rem;margin-top:1.5rem;padding:.85rem 1.8rem;background:#25D366;color:white;border-radius:30px;text-decoration:none;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;font-family:'Jost',sans-serif;box-shadow:0 6px 20px rgba(37,211,102,.35);transition:all .3s;">
+        💬 WhatsApp ला Message करा
+      </a>
+    </div>
+
+    <!-- RIGHT: Google Form Embedded -->
+    <div class="gform-wrapper fade-up">
+      <div class="gform-header">
+        <h3>Send Booking Request </h3>
+        <!-- <p>खाली form भरा — सगळ्या details directly Gmail मध्ये येतील 📩</p> -->
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           🔴 IMPORTANT: तुमचा Google Form link खाली src="" मध्ये टाका
+           
+           Google Form Link मिळवण्यासाठी:
+           1. forms.google.com उघडा
+           2. तुमचा form उघडा → Send button → 🔗 Link tab
+           3. Link असे दिसेल:
+              https://docs.google.com/forms/d/e/1FAIpQLSxxxxxxxx/viewform
+           4. त्यातला "viewform" → "viewform?embedded=true" करा
+           5. ती पूर्ण link खाली src="" मध्ये paste करा
+           
+           उदा: src="https://docs.google.com/forms/d/e/1FAIpQLSxxxxxxxx/viewform?embedded=true"
+      ═══════════════════════════════════════════════════════════ -->
+      <iframe
+        class="gform-frame"
+        src="https://forms.gle/qxqFetRu6UfL9HEz9"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="Booking Form"
+        loading="lazy">
+        Loading form...
+      </iframe>
+
+      <div class="gform-note">
+        🔒 Your Information Is Safe Only Suman Kokade Can See That
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand-name">Suman Kokade</div>
+      <div class="footer-brand-sub">Luxury Makeup Artist · Solapur</div>
+      <p class="footer-brand-desc">Crafting timeless bridal looks that make every bride feel like the most beautiful version of herself. Available for weddings across India.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#portfolio">Bridal Portfolio</a></li>
+        <li><a href="#services">Packages & Pricing</a></li>
+        <li><a href="#reviews">Bride Reviews</a></li>
+        <li><a href="#booking">Book Now</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Bridal Makeup</a></li>
+        <li><a href="#services">Airbrush HD Makeup</a></li>
+        <li><a href="#services">Hair Styling</a></li>
+        <li><a href="#services">Saree Draping</a></li>
+        <li><a href="#services">Pre-Bridal Care</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="tel:+919309399932">+91 93093 99932</a></li>
+        <li><a href="mailto:samruddhikokade143@gmail.com">samruddhikokade143@gmail.com</a></li>
+        <li><a href="#">Bhavani Peth, Solapur</a></li>
+        <li><a href="https://www.instagram.com/sumankokade6" target="_blank">Instagram →</a></li>
+        <li><a href="https://wa.me/919309399932" target="_blank">WhatsApp Chat →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2025 Suman Kokade Beauty Studio. All rights reserved.</div>
+    <div class="footer-social">
+      <a class="social-btn" href="https://www.instagram.com/sumankokade6" target="_blank" title="Instagram">📸</a>
+      <a class="social-btn" href="#" title="Facebook">📘</a>
+      <a class="social-btn" href="https://wa.me/919309399932" target="_blank" title="WhatsApp">💬</a>
+    </div>
+    <div style="font-size:.68rem;">Designed with ♡ for beautiful brides</div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a class="wa-float" href="https://wa.me/919309399932?text=Hi%20Suman!%20I%20would%20like%20to%20book%20a%20makeup%20appointment." target="_blank">
+  💬
+  <span class="wa-tooltip">Chat on WhatsApp</span>
+</a>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <div class="lightbox-inner" id="lightboxInner">
+    <div id="lightboxBg" style="width:100%;height:100%;"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem;background:linear-gradient(to top,rgba(28,15,20,.9),transparent);">
+      <div id="lightboxName" style="font-family:'Playfair Display',serif;font-size:1.4rem;color:white;font-style:italic;"></div>
+      <div id="lightboxEvent" style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--blush);margin-top:.25rem;"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* CURSOR */
+const cur=document.getElementById('cur'),curRing=document.getElementById('curRing');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+  curRing.style.left=e.clientX+'px';curRing.style.top=e.clientY+'px';
+});
+document.querySelectorAll('a,button,.port-card,.insta-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{curRing.style.transform='translate(-50%,-50%) scale(1.6)';cur.style.opacity='.5';});
+  el.addEventListener('mouseleave',()=>{curRing.style.transform='translate(-50%,-50%) scale(1)';cur.style.opacity='1';});
+});
+
+/* NAV */
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',scrollY>50);
+});
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');}
+
+/* FADE-UP */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*100);obs.unobserve(e.target);}
+  });
+},{threshold:.1});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+/* PORTFOLIO FILTER */
+function filterPort(cat,btn){
+  document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.port-card').forEach(c=>{
+    c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';
+  });
+}
+
+/* BEFORE/AFTER SLIDER */
+const baContainer=document.getElementById('baContainer');
+const baBefore=document.getElementById('baBefore');
+const baHandle=document.getElementById('baHandle');
+let isDragging=false;
+function setBAPos(x){
+  const rect=baContainer.getBoundingClientRect();
+  let pct=Math.min(Math.max((x-rect.left)/rect.width*100,2),98);
+  baBefore.style.clipPath=`polygon(0 0,${pct}% 0,${pct}% 100%,0 100%)`;
+  baHandle.style.left=pct+'%';
+}
+baContainer.addEventListener('mousedown',e=>{isDragging=true;setBAPos(e.clientX);});
+baContainer.addEventListener('touchstart',e=>{isDragging=true;setBAPos(e.touches[0].clientX);},{passive:true});
+document.addEventListener('mousemove',e=>{if(isDragging)setBAPos(e.clientX);});
+document.addEventListener('touchmove',e=>{if(isDragging)setBAPos(e.touches[0].clientX);},{passive:true});
+document.addEventListener('mouseup',()=>isDragging=false);
+document.addEventListener('touchend',()=>isDragging=false);
+
+/* LIGHTBOX */
+function openLightbox(imgSrc,name,event){
+  const lb=document.getElementById('lightbox');
+  const bg=document.getElementById('lightboxBg');
+  bg.innerHTML=`<img src="${imgSrc}" alt="${name}" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;" onerror="this.parentElement.style.background='linear-gradient(145deg,#2d1020,#8B3050,#C87090)';" />`;
+  document.getElementById('lightboxName').textContent=name;
+  document.getElementById('lightboxEvent').textContent=event;
+  lb.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(e){
+  if(!e||e.target===document.getElementById('lightbox')||e.currentTarget.classList.contains('lightbox-close')){
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow='';
+  }
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox({target:document.getElementById('lightbox')});});
+</script>
+</body>
+</html>
